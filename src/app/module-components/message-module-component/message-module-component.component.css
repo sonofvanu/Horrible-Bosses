@@ -1,0 +1,55 @@
+.userlist{
+    font-size: 15pt;
+    color: red;
+    display: block;
+    font-style: italic;
+}
+
+
+.messagepanel{
+    margin-top:1vw;
+    width:65vw;
+    height:5vh;
+    border-color: red;
+    border: 2px;
+    border-style: groove;
+    margin-left: 1vw;
+    border-radius: 25px;
+    display: inline-block;
+    background-color: white;
+    
+}
+
+.datetime{
+color:red;
+font-style: oblique;
+font-stretch: inherit;
+
+}
+
+.datetime1{
+    margin-left: 10vw;
+    align-content: flex-end;
+    text-align: right;
+    }
+
+    b,i{
+        margin-inline-start: 5vw;
+    }
+
+    .rightdown{
+        
+        background-color:black;
+        clear:both;
+line-height:0;
+position:absolute;bottom:0;
+
+    }
+    .messagebox{
+		height:6vh;   
+    	width: 65vw;
+    	margin-left: 10pt;
+        border-radius: 50px;
+        
+         
+    }

@@ -1,0 +1,331 @@
+	/* width */
+	::-webkit-scrollbar {
+		width: 0px;
+	}
+	
+	/* Track */
+	::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px grey; 
+		border-radius: 0px;
+	}
+	 
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background:#df9fbf ; 
+		border-radius: 10px 10px 10px 10px;
+	}
+			.wholepage
+			{
+				height:100vh;
+				width: 100vw;
+				background-color: #3333ff;
+			}
+			.navbarpart{
+				width:100vw;
+				height:6vh;
+				display: flex;
+	
+			}
+			.logopart{
+				width:20vw;
+				height:6vh;
+				color:white;
+				background-color: #3333ff;
+			}
+			.sidepart{
+				width:80vw;
+				height:6vh;
+				display:flex;
+				background-color: white;
+			}
+			.sidesearchbar{
+				width:45vw;
+				height:6vh;
+				display: flex;
+				background-color: white;
+	
+			}
+			.sidenamebar{
+				width:37vw;
+				height:6vh;
+				background-color: white;
+	
+			}
+			.sidename{
+				width:45vw;
+				height:4vh;
+				padding-left:2vw;
+				background-color: white;
+			}
+			.userdetails{
+				width:45vw;
+				height:2vh;
+				background-color: white;
+			}
+			.contentpart
+			{
+				width:100vw;
+				height:94vh;
+				background-color: white;
+				display:flex;
+			}
+			.sidenavbar{
+				width:20vw;
+				height:94vh;
+				background-color: #3333ff;
+			}
+			.messagecontent{
+					width:80vw;
+				height:94vh;
+				overflow: inherit;
+				background-color: #3333ff;
+			display:inline-block;
+				
+				font-size: 1em;
+				font-family: cursive;
+			}
+			.logo{
+				display:inline;
+				align-content: center;
+				font-size: 2em;
+				float: center;
+				margin-top: 0;
+				font-family:cursive;
+	
+			}
+			.username{
+				font-family:cursive;	
+				font-weight: 400;
+				font-size: 1em;
+				font-family:cursive;
+			}
+			.messagerusername{
+				font-family:cursive;	
+				font-weight: 500;
+				font-size: 1.4em;
+				font-family:cursive;
+			}
+			.onlinesymbol{
+				font-size: 1.2em;
+				color:lightgreen;
+			}
+			.searchbar{
+				width:20vw;
+				height:3vh;
+				background-color: #3333ff;
+			}
+			.allthreads{
+				color:white;
+					width:20vw;
+				height:3vh;
+				background-color: #3333ff;
+	
+		font-style: bold;
+		font-size: 1.2em;
+		font-family: cursive;
+			}
+			.circlenamebar{
+					color:white;
+		font-style: bold;
+		font-size: 1.2em;
+		font-family: cursive;
+				width:20vw;
+				height:3vh;
+				background-color: #3333ff;
+			}
+			.circlebar{
+				width:20vw;
+				height:30vh;
+				color:white;
+		font-style: bold;
+		font-size: 1.2em;
+		font-family: cursive;
+				background-color: #3333ff;
+			}
+			.circlelistbar{
+				width:17vw;
+				height:26vh;
+				border-style: solid;
+				border-color:white;
+				margin-left:1vw;
+				border-radius:25px;
+	overflow-y: scroll;
+	
+		
+	}
+
+			.userbarname{
+				width:20vw;
+				height:3vh;
+				color:white;
+		font-style: bold;
+		font-size: 1.2em;
+		font-family: cursive;
+				background-color: #3333ff;
+	
+			}
+			
+			.invitenamebar{
+				width:20vw;
+				height:3vh;
+				background-color: #3333ff;
+			}
+			.footer{
+				width:20vw;
+				height:9vh;
+				background-color: #3333ff;
+	
+			}
+			.circleusernamebar{
+				width:80vw;
+				height:3.5vh;
+				background-color: white;
+	
+			}
+			.messagecontainer{
+				overflow-y: scroll;
+				width: 75vw;
+				height:89vh;
+				background-color: white;
+				margin-left:2.5vw;
+				border-radius:25px;
+				top:0;
+			}
+			.allmessagecontainer{
+				overflow-y: scroll;
+				width: 75vw;
+				height:81vh;
+				margin-bottom:1vh;
+			}
+			.messages{
+	
+				width:70vw;
+				background-color: white;
+				margin-left:1vw;
+				display: flex;
+				border-radius: 25px;
+	
+	
+			}
+			.messagername{
+				width: auto;
+				height:5vh;
+				border-style: solid;
+				border-color:white;
+				font-size: 1em;
+				font-family: cursive;
+				border-radius: 10px 10px 10px 10px;
+			}
+			.messagecontent{
+				float: auto;
+				margin-top: 1vh;
+				width:58vw;
+				height:auto;
+				border-style: solid;
+				background-color:white;
+				font-size: 1em;
+				font-family: cursive;
+				border-radius:10px 10px 10px 10px;
+	
+			}
+			.msg{
+				opacity:12 ;
+				
+			}
+			.inputmessage{
+				position:absolute;
+				bottom: 2;
+				width:70vw;
+				height:5vh;
+				background-color: white;
+				margin-left:2.5vw;
+				display:flex;
+				padding-bottom: 0.5vh;
+				
+			}
+			.singlemessage{
+				padding-bottom: 1vh;
+			}
+			.addmessagecontent{
+				width: 4vw;
+				height:5vh;
+				
+				border-style: solid;
+				border-radius: 10px 0px 0px 10px;
+	
+			}
+			.actualmessage{
+				width:66vw;
+				height:5vh;
+				border-style: solid;
+				background-color:white;
+	border-radius:0px 10px 10px 0px;
+	font-size: 1.5em;
+	font-family:cursive;
+			}
+			.usernamecirclename{
+	
+				font-family:cursive;	
+				font-weight: 400;
+				font-size: 1.5em;
+				font-family:cursive;
+	
+			}
+			.searchbar{
+				background-color: #00000000;
+				
+				color:white;
+		font-style: bold;
+		font-size: 1.2em;
+		font-family: cursive;
+				}
+				.actualmessageinput{
+					width:65.5vw;
+				height:4vh;
+				background-color:white;
+				font-size: 1.5em;
+				font-family: cursive;
+				font-weight: bold;
+	
+				}
+	.userfullname{
+		font-family: cursive;
+		font-weight: bold;
+		font-size:1em;
+		padding-left:2vw;
+	}
+	.searchbarright{
+		background-color: white;
+	
+	}
+	.phonecall{
+	width:4vw;
+	height:6vh;
+	background-color: white;
+	}
+	.settings{
+	width:4vw;
+	height:6vh;
+	background-color: white;
+	}
+	.notification{
+		width:4vw;
+	height:6vh;
+	background-color: white;
+	}
+	.atsymbol{
+	width:4vw;
+	height:6vh;
+	background-color: white;
+	}
+	.starsymbol{
+	width:4vw;
+	height:6vh;
+	background-color: white;
+	}
+	.moreitems{
+		width:2vw;
+	height:6vh;
+	background-color: white;
+	}
+	
