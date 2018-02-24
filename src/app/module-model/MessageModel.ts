@@ -1,4 +1,4 @@
-import { Time } from "@angular/common/src/i18n/locale_data_api";
+import { Time } from '@angular/common/src/i18n/locale_data_api';
 
 export class Message{
     messageId:number;

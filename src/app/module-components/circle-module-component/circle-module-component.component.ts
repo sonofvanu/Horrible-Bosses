@@ -3,6 +3,7 @@ import { CircleModuleServiceService } from '../../module-services/CircleModuleSe
 import { Circle } from '../../module-model/CircleModel';
 import { Input } from '@angular/core';
 import { UserRegistration } from '../../module-model/UserModel';
+import { MessageModuleServiceService } from '../../module-services/MessageModuleService/message-module-service.service';
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
@@ -18,7 +19,7 @@ export class CircleModuleComponentComponent implements OnInit {
   selectedCircle:Circle;
 
   
-  @Output() circleGot=new EventEmitter<Circle>();
+  @Output() cirlceSelected=new EventEmitter<number>();
 
   constructor(private circleModuleService:CircleModuleServiceService) { }
 
@@ -26,8 +27,12 @@ export class CircleModuleComponentComponent implements OnInit {
     
   }
  
+
   
-  selecircle(ccl:Circle):void{
-    this.circleGot.emit(ccl);
+  onSelect(circleId:number){
+    console.log("hello circle "+circleId);
+    this.cirlceSelected.emit(circleId);
+    
+    
   }
 }

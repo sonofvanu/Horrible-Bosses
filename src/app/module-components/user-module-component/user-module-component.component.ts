@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { UserRegistration } from '../../module-model/UserModel';
-import { UserModuleServiceService } from '../../module-services/UserModuleService/user-module-service.service';
-import { AppComponent } from '../../app.component';
-import { Input } from '@angular/core';
-import { NgModule } from '@angular/core/src/metadata/ng_module';
+import {Component, OnInit} from '@angular/core';
+import {UserRegistration} from '../../module-model/UserModel';
+import {UserModuleServiceService} from '../../module-services/UserModuleService/user-module-service.service';
+import {AppComponent} from '../../app.component';
+import {Input, EventEmitter, Output} from '@angular/core';
+import {NgModule} from '@angular/core/src/metadata/ng_module';
 
 @Component({
   selector: 'app-user-module-component',
@@ -14,15 +14,25 @@ import { NgModule } from '@angular/core/src/metadata/ng_module';
 
 export class UserModuleComponentComponent implements OnInit {
 
-  @Input() users:UserRegistration[];
-
-  constructor(private userModuleService:UserModuleServiceService) { }
+  @Input() users: UserRegistration[];
   
+  
+  selectedUser: UserRegistration;
+
+
+  @Output() userSelected = new EventEmitter<string>();
+
+  constructor(private userModuleService: UserModuleServiceService) {}
+
   ngOnInit() {
-    
-    
+
+
   }
 
-  
+  onSelect(id: string) {
+    console.log("going to get messages from " + id);
+    this.userSelected.emit(id);
+
+  }
 
 }

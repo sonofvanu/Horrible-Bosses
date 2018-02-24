@@ -8,7 +8,7 @@ export class MessageModuleServiceService {
   constructor(private http:Http) { }
 
   private userMessage='http://localhost:9053/messageUser';
-  private circleMessage='http://localhost:9053/messageCircle/';
+  private circleMessage='http://localhost:9053/messageCircle';
 
 userid='gamma@gmail.com';
   getSingleUserMessage(id:string){
@@ -16,7 +16,8 @@ userid='gamma@gmail.com';
   }
 
 getSingleCircleMessage(id:number){
-  return this.http.get(this.circleMessage+'/'+id+'/');
+  const circleId:number=id;
+  return this.http.get(this.circleMessage+'/'+circleId+'/');
 }
 
 }

@@ -7,11 +7,11 @@ export class UserModuleServiceService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   
-  constructor(private http:Http) { }
+  constructor(private http: Http) { }
 
-  private usersUrl='http://localhost:9051/user';
+  private usersUrl = 'http://localhost:9051/user';
 
-  getUsers(){
+  getUsers() {
       return this.http.get(this.usersUrl);
   }
 

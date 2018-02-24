@@ -1,4 +1,4 @@
-export class Circle{
+export class Circle {
     circleId:number;
     circleName:string;
     circleStatus:boolean;

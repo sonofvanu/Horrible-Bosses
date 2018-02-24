@@ -1,6 +1,7 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 import { UserModuleComponentComponent } from './module-components/user-module-component/user-module-component.component';
@@ -11,8 +12,9 @@ import { CircleModuleServiceService } from './module-services/CircleModuleServic
 import { MessageModuleServiceService } from './module-services/MessageModuleService/message-module-service.service';
 import { HttpModule } from '@angular/http/';
 import { AppRoutingModule } from './module-router/app-routing.module';
-import { CreateCircleModalService } from './module-services/create-circle-modal.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CreateCircleService } from './module-services/CreateCircleService/create-circle.service';
+
 
 
 
@@ -21,12 +23,14 @@ import { CreateCircleService } from './module-services/CreateCircleService/creat
     AppComponent,
     UserModuleComponentComponent,
     CircleModuleComponentComponent,
-    MessageModuleComponentComponent
+    MessageModuleComponentComponent,
+    
+    
   ],
   imports: [
-    BrowserModule,HttpModule, AppRoutingModule
+    BrowserModule,HttpModule, AppRoutingModule,NgbModule,NgbModule.forRoot(),FormsModule
   ],
-  providers: [UserModuleServiceService, CircleModuleServiceService, MessageModuleServiceService, CreateCircleModalService, CreateCircleService],
+  providers: [UserModuleServiceService, CircleModuleServiceService, MessageModuleServiceService, CreateCircleService],
   bootstrap: [AppComponent],
   entryComponents:[CircleModuleComponentComponent,UserModuleComponentComponent]
 })

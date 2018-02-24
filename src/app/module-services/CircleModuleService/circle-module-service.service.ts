@@ -1,17 +1,26 @@
+import { Circle } from '../../module-model/CircleModel';
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
+
 
 @Injectable()
 export class CircleModuleServiceService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   
-  constructor(private http:Http) { }
+  constructor(private http: Http) { }
 
-  private circlesUrl='http://localhost:9060/circle';
+  private circlesUrl = 'http://localhost:9060/circle';
 
-  getCircles(){
+  getCircles() {
       return this.http.get(this.circlesUrl);
+  }
+  
+  createCircle(circle:Circle)
+  {
+    return this.http.post(this.circlesUrl,circle);
   }
 
 }
