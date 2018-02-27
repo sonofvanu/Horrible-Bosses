@@ -8,5 +8,4 @@ export class Message{
     receiverId:string;
     messageVisibility:boolean;
     messageSentOn:Date;
-    messageSentAt:Time;
 }

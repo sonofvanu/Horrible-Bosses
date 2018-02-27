@@ -13,8 +13,11 @@ import { MessageModuleServiceService } from './module-services/MessageModuleServ
 import { HttpModule } from '@angular/http/';
 import { AppRoutingModule } from './module-router/app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CreateCircleService } from './module-services/CreateCircleService/create-circle.service';
 
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { SendmessageComponent } from './module-components/sendmessage/sendmessage.component';
+import { UserCircleService } from './module-services/UserCircleService/user-circle.service';
+import { CircleActionComponent } from './module-components/circle-action/circle-action.component';
 
 
 
@@ -24,13 +27,13 @@ import { CreateCircleService } from './module-services/CreateCircleService/creat
     UserModuleComponentComponent,
     CircleModuleComponentComponent,
     MessageModuleComponentComponent,
-    
-    
+    SendmessageComponent,
+    CircleActionComponent,
   ],
   imports: [
     BrowserModule,HttpModule, AppRoutingModule,NgbModule,NgbModule.forRoot(),FormsModule
   ],
-  providers: [UserModuleServiceService, CircleModuleServiceService, MessageModuleServiceService, CreateCircleService],
+  providers: [UserModuleServiceService, CircleModuleServiceService, MessageModuleServiceService,  UserCircleService],
   bootstrap: [AppComponent],
   entryComponents:[CircleModuleComponentComponent,UserModuleComponentComponent]
 })

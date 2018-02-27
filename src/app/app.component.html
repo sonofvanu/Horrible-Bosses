@@ -81,7 +81,78 @@
 
 					<div class="moreitems">
 						<i class="fa fa-ellipsis-v"
-							style="font-size: 2em; padding: 1.2vh;"></i>
+							style="font-size: 2em; padding: 1.2vh;" (click)="openOptions(options)"></i>
+
+							<ng-template #options let-c="close" let-d="dismiss">
+								<div class="modalstyle">
+								<div class="modal-header" style="background-color: 3333ff;" >
+								  <h4 class="modal-title" style="font-weight:bold;font-size:1.5em;color:#4d394b;">Options</h4>
+								  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+									<span aria-hidden="true">&times;</span>
+								  </button>
+								</div>
+								<div class="modal-body" style="display:flex;">
+								  <p style="color:Green;font-family:cursive;font-weight: bold;font-size:1em;padding-left:2vw;" (click)="open(joincircles);c('Close click')">Subscribe Circle</p>
+								  &nbsp;
+								  <p style="color:Red;font-family:cursive;font-weight: bold;font-size:1em;padding-left:2vw;" (click)="open(leavecircles);c('Close click')">Unsubscribe Circle</p>
+								  &nbsp;
+								  <p style="color:Blue;font-family:cursive;font-weight: bold;font-size:1em;padding-left:2vw;">My Profile</p>
+								</div>
+								<div class="modal-footer">
+								  <button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
+								</div>
+							</div>
+							  </ng-template>
+
+
+							  <ng-template #joincircles let-c="close" let-d="dismiss">
+									<div class="modal-header" style="opacity: 0;">
+									  <h4 class="modal-title"> </h4>
+									  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+										<span aria-hidden="true">&times;</span>
+									  </button>
+									</div>
+									<div class="modal-header" style="opacity: 0;">
+											<h4 class="modal-title"> </h4>
+											<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+											  <span aria-hidden="true">&times;</span>
+											</button>
+										  </div>
+										  <div class="modal-header">
+												<h4 class="modal-title">Circles </h4>
+												<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+												  <span aria-hidden="true">&times;</span>
+												</button>
+											  </div>
+									<div class="modal-body col-xl-6" style="overflow-y:scroll;align-content: center;">
+											<app-circle-action [circles]="circles"></app-circle-action>
+													
+												
+									</div>
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+									</div>
+								  </ng-template>
+
+								  <ng-template #leavecircles let-c="close" let-d="dismiss">
+										<div class="modal-header">
+										  <h4 class="modal-title">Modal title</h4>
+										  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+											<span aria-hidden="true">&times;</span>
+										  </button>
+										</div>
+										<div class="modal-body">
+										  <p>One fine body&hellip; leave circle</p>
+										</div>
+										<div class="modal-footer">
+										  <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+										</div>
+									  </ng-template>
+									  
+								  
+
+							  
+							
 					</div>
 				</div>
 			</div>
@@ -120,24 +191,24 @@
 
 				</div>
 				<div class="modalstyle">
-<ng-template #content let-c="close" let-d="dismiss" >
- 
-  <div class="modal-header">
-    <h4 class="modal-title">Create your Circle</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-
-    <input type="text" style="border-radius:1vh 0 1vh 0;width:20vw;font-family:cursive;" [(ngModel)]="circle.circleName">
-  </div>
-  <div class="modal-footer">
-  <button type="button" class="btn btn-success" (click)="addCircle(circle); circleName.value=''">Create</button>
-    <button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
-  </div>
- 
-</ng-template>
+					<ng-template #content let-c="close" let-d="dismiss">
+						<div class="modal-header">
+						  <h4 class="modal-title">Modal title</h4>
+						  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						<div class="modal-body">
+							<form #f="ngForm" (ngSubmit)="register();c('Close click')">
+								<input [(ngModel)]="model.name" #circle.id="ngModel" name="name" style="width:25vw;border-radius:1vw 1vw 1vw 1vw;font-family:cursive" >
+								  <button class="btn btn-success" style="border-radius:1vw 0 1vw 0;font-family:cursive"  >Submit</button>
+								</form>
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+						</div>
+					  </ng-template>
+					  
 				</div>
 
 				<app-circle-module-component [circles]="circles"
@@ -156,7 +227,29 @@
 				<div class="footer"></div>
 
 			</div>
-			<app-message-module-component [messages]="messages"></app-message-module-component>
+			<div class="messagebody">
+				
+
+				<div class="messagecontainer">
+					&nbsp;
+			<app-message-module-component [messages]="messages" ></app-message-module-component>
+		<app-sendmessage [userId]="userId" [circleId]="circleId"></app-sendmessage>
+
+
+
+
+
+
+
+
+
+		</div>
+
+
+
+		
+
+	</div>
 		</div>
 
 	</div>

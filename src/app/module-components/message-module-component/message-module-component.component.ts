@@ -17,10 +17,12 @@ import { Circle } from '../../module-model/CircleModel';
 export class MessageModuleComponentComponent implements OnInit {
   @Input()messages:Message[];
 
-  sendMessage:Message;
+  
+  
+
 
   
-  @Input() circle:Circle
+  
   
  
  
@@ -34,34 +36,13 @@ export class MessageModuleComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    //this.getSingUserMessage();
+    
   
     
       }
      
 
-  getSingUserMessage():void
-  {
-    const userEmail:string=this.actvatedroute.snapshot.paramMap.get('id');
-    
-      console.log("going to fetch msgs from "+userEmail);
-      this.messageModuleService.getSingleUserMessage(userEmail).subscribe( (data)=>{
-        this.messages=data.json();
-      }
-      );
-    
-
-  }
-
-  getCircleMessages(ccd:string):void{
-    console.log(ccd+'   got');
-       
-  }
-
-  
-printCircle(ccl:Circle){
-  console.log(ccl.circleId);
-}
+ 
 
 
 }

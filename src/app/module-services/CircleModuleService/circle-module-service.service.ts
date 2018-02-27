@@ -1,7 +1,6 @@
 import { Circle } from '../../module-model/CircleModel';
-import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 
 
@@ -18,9 +17,11 @@ export class CircleModuleServiceService {
       return this.http.get(this.circlesUrl);
   }
   
-  createCircle(circle:Circle)
+  createCircle(circle:Circle):void
   {
-    return this.http.post(this.circlesUrl,circle);
+    console.log("got circle in service");
+    console.log(circle);
+    this.http.post(this.circlesUrl+"/",circle).subscribe(res => console.log(res));
   }
 
 }
