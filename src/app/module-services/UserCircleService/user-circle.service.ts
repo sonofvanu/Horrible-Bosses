@@ -7,13 +7,21 @@ export class UserCircleService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  private userCircleUrl="'http://localhost:9054/addUserToCircle';"
+  private userCircleUrl="http://localhost:9054/addUserToCircle";
   
   constructor(private http: Http) { }
 
   joinUserToCircle(userCircle:UserCircle)
   {
-    this.http.post(this.userCircleUrl,userCircle);
+    console.log("going to add"+userCircle.userId);
+    this.http.post(this.userCircleUrl+'/',userCircle).subscribe(res => console.log(res));
+  
+  }
+
+
+  removeUserFromCircle()
+  {
+    console.log("going to remnove a user form circle");
   }
 
 

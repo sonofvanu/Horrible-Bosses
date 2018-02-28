@@ -1,8 +1,8 @@
 <div class="circlelistbar1">
     <div style="display: flex; margin-top: 0.2vh;"
       *ngFor="let singlecircle of circles">
-      <i style="margin-left: 1.8vw; font-size: 1.2em;color:gold;" class="fa">&#xf0c0;</i>
-      <p style="margin-left: 1vw;color:indigo;" (click)="addUserToCircle(singlecircle.circleId,singlecircle.circleName);d('Cross click')">
+      <i style="margin-left: 1.8vw; font-size: 1.2em;color:Lightgreen;" class="fa">&#xf0c0;</i>
+      <p style="margin-left: 1vw;color:orange;font-size:1.2em;font-family:cursive;font-weight:bold;" (click)="addUserToCircle(singlecircle.circleId,singlecircle.circleName);">
         {{singlecircle.circleName| lowercase}}</p>
     </div>
   </div>
