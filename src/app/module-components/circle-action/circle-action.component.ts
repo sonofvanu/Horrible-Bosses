@@ -10,6 +10,8 @@ import { UserCircleService } from '../../module-services/UserCircleService/user-
 })
 export class CircleActionComponent implements OnInit {
 @Input()circles:Circle[];
+@Input() usercircles:UserCircle[];
+@Input() join:boolean;
 userCircle:UserCircle;
 
 
@@ -24,10 +26,16 @@ userCircle:UserCircle;
     this.userCircle.circleId=circleId;
     this.userCircle.circleName=circleName;
     this.userCircle.joinedOn=new Date();
-    this.userCircle.userId="gamma@gmail.com";
+    this.userCircle.userId="milaga@gmail.com";
     this.userCircleService.joinUserToCircle(this.userCircle);
     console.log("going to add the user to the circle: "+circleId+"   "+circleName);
 
+  }
+
+  removeUserFromCircle(userCircle:UserCircle)
+  {
+    userCircle.circleStatus=false;
+      this.userCircleService.removeUserFromCircle(userCircle);
   }
 
 }

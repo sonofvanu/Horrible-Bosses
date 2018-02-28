@@ -35,10 +35,10 @@ export class SendmessageComponent implements OnInit {
     this.sendMessage.messageSentOn = new Date();
     this.sendMessage.messageVisibility = true;
     this.sendMessage.receiverId = this.userId;
-    this.sendMessage.senderId = "gamma@gmail.com";
+    this.sendMessage.senderId = "milaga@gmail.com";
     console.log(this.message);
     this.messageService.sendMessage(this.sendMessage, this.userId, this.circleId);
-
+    this.msg=' ';
   }
 }
 }

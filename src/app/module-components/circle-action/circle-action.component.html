@@ -1,4 +1,4 @@
-<div class="circlelistbar1">
+<div class="circlelistbar1" *ngIf="circles">
     <div style="display: flex; margin-top: 0.2vh;"
       *ngFor="let singlecircle of circles">
       <i style="margin-left: 1.8vw; font-size: 1.2em;color:Lightgreen;" class="fa">&#xf0c0;</i>
@@ -6,3 +6,15 @@
         {{singlecircle.circleName| lowercase}}</p>
     </div>
   </div>
+
+  
+    <div class="circlelistbar1" *ngIf="usercircles">
+      <div style="display: flex; margin-top: 0.2vh;"
+        *ngFor="let singlecircle of usercircles">
+        <i style="margin-left: 1.8vw; font-size: 1.2em;color:Lightgreen;" class="fa">&#xf0c0;</i>
+        <p style="margin-left: 1vw;color:orange;font-size:1.2em;font-family:cursive;font-weight:bold;" (click)="removeUserFromCircle(singlecircle);">
+          {{singlecircle.circleName| lowercase}}</p>
+      </div>
+    </div>
+
+  

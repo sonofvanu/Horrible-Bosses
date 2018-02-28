@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
   message: string;
   msg: string;
   userCircle:UserCircle;
+  userCircles:UserCircle[];
 
   constructor(private userService: UserModuleServiceService,
     private circleService: CircleModuleServiceService, private actvatedroute: ActivatedRoute,
@@ -55,6 +56,7 @@ export class AppComponent implements OnInit {
     this.getUsers();
     this.getCircles();
     this.bodyText = 'This text can be updated in modal 1';
+    this.getUserCircles();
 
   }
 
@@ -74,8 +76,22 @@ export class AppComponent implements OnInit {
         this.circles = data.json();
       }
     );
-
   }
+
+
+
+  getUserCircles()
+
+{
+  this.userCircleService.userCircles("milaga@gmail.com").subscribe(
+    (data) => {
+      this.userCircles = data.json();
+    }
+  );
+
+  console.log(this.userCircles);
+  
+}
 
 
   getCircleMessages($event): void {
@@ -138,6 +154,7 @@ export class AppComponent implements OnInit {
     //this.circle.circleName=circleName.toString();
     //this.circleService.createCircle(this.circle);
     console.log(circle.circleName.trim() + " has been created");
+    
   }
 
 
@@ -195,6 +212,7 @@ export class AppComponent implements OnInit {
   }
 
   openleavecircle(leavecircles) {
+   
     this.modalService.open(leavecircles).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

@@ -19,9 +19,15 @@ export class UserCircleService {
   }
 
 
-  removeUserFromCircle()
+  removeUserFromCircle(userCircle:UserCircle)
   {
-    console.log("going to remnove a user form circle");
+    this.http.put("http://localhost:9054/removeUserFromcircle/",userCircle).subscribe(res => console.log(res));
+  }
+
+  userCircles(userId:string)
+  {
+    console.log("going to get the circles of "+userId);
+    return this.http.get("http://localhost:9054/usersCircles/"+userId+"/");
   }
 
 

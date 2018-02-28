@@ -125,7 +125,7 @@
 												</button>
 											  </div>
 									<div class="modal-body col-xl-6" style="overflow-y:scroll;align-content: center;">
-											<app-circle-action [circles]="circles"></app-circle-action>
+											<app-circle-action [circles]="circles" [join]="true"></app-circle-action>
 													
 												
 									</div>
@@ -135,17 +135,31 @@
 								  </ng-template>
 
 								  <ng-template #leavecircles let-c="close" let-d="dismiss">
-										<div class="modal-header">
-										  <h4 class="modal-title">Modal title</h4>
-										  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+										<div class="modal-header" >
+											<h4 class="modal-title"> </h4>
+											<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
 											<span aria-hidden="true">&times;</span>
-										  </button>
+											</button>
 										</div>
-										<div class="modal-body">
-										  <p>One fine body&hellip; leave circle</p>
+										<div class="modal-header" >
+												<h4 class="modal-title"> </h4>
+												<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												</div>
+												<div class="modal-header" >
+													<h4 class="modal-title">Leave Circles </h4>
+													<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+														<span aria-hidden="true">&times;</span>
+													</button>
+													</div>
+										<div class="modal-body col-xl-6" style="overflow-y:scroll;align-content: center;">
+												<app-circle-action [usercircles]="userCircles" [join]="false"></app-circle-action>
+														
+													
 										</div>
-										<div class="modal-footer">
-										  <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+										<div class="modal-footer" >
+											<button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
 										</div>
 									  </ng-template>
 									  
