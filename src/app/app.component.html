@@ -37,8 +37,10 @@
 				<div class="sidenamebar">
 					<div class="sidename">
 						<div style="display: flex;">
-							<p class="onlinesymbol">&#x25C9;</p>
-							<p class="usernamecirclename">&nbsp;Sonofvanu</p>
+							<p class="onlinesymbol" *ngIf="circleId">&#x25C9;</p>
+							<p class="usernamecirclename" *ngIf="circleId">&nbsp;{{circleId}}</p>
+							<p class="onlinesymbol" *ngIf="userId">&#x25C9;</p>
+							<p class="usernamecirclename" *ngIf="userId">&nbsp;{{userId}}</p>
 						</div>
 					</div>
 					<div class="userdetails">
@@ -226,7 +228,7 @@
 				</div>
 
 				<app-circle-module-component [circles]="circles"
-					(cirlceSelected)="getCircleMessages($event)"></app-circle-module-component>
+					(cirlceSelected)="getCircleMessages($event)" (circleNameSelected)="getCircleName($event)"></app-circle-module-component>
 				<div class="userbarname">
 					<div style="display: flex;">
 						<i style="margin-left: 1.8vw; font-size: 1.5em;" class="fa">&#xf1ae;</i>
@@ -247,7 +249,14 @@
 				<div class="messagecontainer">
 					&nbsp;
 			<app-message-module-component [messages]="messages" ></app-message-module-component>
-		<app-sendmessage [userId]="userId" [circleId]="circleId"></app-sendmessage>
+			<div class="inputmessage">
+				<div class="addmessagecontent">
+						<i style="font-size:2em;padding: 0.5vw;color:black; padding-left:1vw;" class="fa fa-plus"></i>
+					</div>
+					
+						<input type="text" class="actualmessage" name="msg" [(ngModel)]="msg" (keypress)="sendAMessage($event)">
+					
+			</div>
 
 
 

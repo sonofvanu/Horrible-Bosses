@@ -28,20 +28,21 @@ import { UserCircleService } from './module-services/UserCircleService/user-circ
 export class AppComponent implements OnInit {
   closeResult: string;
   model: any = {};
+  msg: string;
   title = 'Horrible-Bosses';
   users: UserRegistration[];
   circles: Circle[];
   circle: Circle;
   messages: Message[];
-  private bodyText: string;
   userId: string
   circleId: number;
-  cl: number;
-  sendMessage: Message;
-  message: string;
-  msg: string;
   userCircle:UserCircle;
   userCircles:UserCircle[];
+  sendMessage: Message;
+  message: string;
+  circlName:string;
+  userName:string;
+
 
   constructor(private userService: UserModuleServiceService,
     private circleService: CircleModuleServiceService, private actvatedroute: ActivatedRoute,
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
     this.getCircles();
-    this.bodyText = 'This text can be updated in modal 1';
+    
     this.getUserCircles();
 
   }
@@ -105,6 +106,8 @@ export class AppComponent implements OnInit {
         this.messages = data.json();
       }
     );
+
+
     console.log(this.messages);
   }
 
@@ -241,6 +244,56 @@ export class AppComponent implements OnInit {
     console.log("going to add the user to the circle: "+circleId+"   "+circleName);
 
   }
+
+
+  sendAMessage(event)
+  {
+  
+    if (event.keyCode == 13) {
+      this.message = event.target.value;
+      this.sendMessage = new Message();
+      this.sendMessage.circleId = this.circleId;
+      this.sendMessage.messageActual = this.message;
+      this.sendMessage.messageSentOn = new Date();
+      this.sendMessage.messageVisibility = true;
+      this.sendMessage.receiverId = this.userId;
+      this.sendMessage.senderId = "milaga@gmail.com";
+      console.log(this.message);
+      this.messageService.sendMessage(this.sendMessage, this.userId, this.circleId);
+      this.msg=' ';
+      this.messages=[];
+      if(this.sendMessage.receiverId==null||undefined)
+      {
+        
+        this.messageService.getSingleCircleMessage(this.sendMessage.circleId).subscribe(
+          (data) => {
+            this.messages = data.json();
+          }
+        );
+      }
+      else{
+
+        this.messageService.getSingleUserMessage(this.sendMessage.receiverId).subscribe(
+          (data) => {
+            this.messages = data.json();
+          }
+        );
+
+
+      }
+    }
+  
+    
+    
+  }
+
+  getCircleName($event)
+  {
+    this.circlName=$event.value;
+  }
+  
+
+  
 }
 
 

@@ -15,7 +15,6 @@ import { AppRoutingModule } from './module-router/app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-import { SendmessageComponent } from './module-components/sendmessage/sendmessage.component';
 import { UserCircleService } from './module-services/UserCircleService/user-circle.service';
 import { CircleActionComponent } from './module-components/circle-action/circle-action.component';
 
@@ -27,7 +26,6 @@ import { CircleActionComponent } from './module-components/circle-action/circle-
     UserModuleComponentComponent,
     CircleModuleComponentComponent,
     MessageModuleComponentComponent,
-    SendmessageComponent,
     CircleActionComponent,
   ],
   imports: [

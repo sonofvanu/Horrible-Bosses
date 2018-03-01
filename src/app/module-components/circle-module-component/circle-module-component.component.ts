@@ -20,6 +20,7 @@ export class CircleModuleComponentComponent implements OnInit {
 
   
   @Output() cirlceSelected=new EventEmitter<number>();
+  
 
   constructor(private circleModuleService:CircleModuleServiceService) { }
 
@@ -29,9 +30,10 @@ export class CircleModuleComponentComponent implements OnInit {
  
 
   
-  onSelect(circleId:number){
+  onSelect(circleId:number,circleName:string){
     console.log("hello circle "+circleId);
     this.cirlceSelected.emit(circleId);
+    
     
     
   }
